@@ -19,10 +19,10 @@
 
     error_reporting(E_ALL & ~E_NOTICE);
 	
-	$path     = __DIR__ . DIRECTORY_SEPARATOR;
+	$path     = getcwd() . DIRECTORY_SEPARATOR;
 	$url      = dirname($_SERVER['HTTP_HOST']) . '/';
-	$savePath = realpath($path . 'upload/') . DIRECTORY_SEPARATOR;
-	$saveURL  = $url . 'upload/';
+    $savePath = realpath($path . '../../../../upload/images/'.$attach['filename']) . DIRECTORY_SEPARATOR;
+    $saveURL  = $url . 'upload/images/'.$attach['filename'];
 
 	$formats  = array(
 		'image' => array('gif', 'jpg', 'jpeg', 'png', 'bmp')

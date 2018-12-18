@@ -24,7 +24,7 @@
         public $formats = array(                // 允许上传的文件格式
             'gif', 'jpg', 'jpeg', 'png', 'bmp'
         );
-        public $maxSize        = 1024;          // 最大上传文件大小，单位KB
+        public $maxSize        = 8192;          // 最大上传文件大小，单位KB
         public $cover          = true;          // 是否覆盖同名文件, 1覆盖,0不覆盖
         public $redirect       = false;         // 是否进行URL跳转
         public $redirectURL    = "";            // 上传成功或出错后要转到的URL        

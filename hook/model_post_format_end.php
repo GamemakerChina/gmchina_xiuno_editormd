@@ -1,4 +1,4 @@
-include_once "plugin/gmchina_xiuno_editormd/parser/Parsedown-5.2.php";
+include_once "plugin/gmchina_xiuno_editormd/parser/Parsedown.php";
 $Parsedown = new Parsedown();
 
 if($post['doctype'] == 2){
@@ -6,5 +6,5 @@ if($post['doctype'] == 2){
 }
 
 if($post['doctype'] == 1) {
-	$post['message_fmt'] = htmlspecialchars($post['message_fmt']);
+	$post['message'] = htmlspecialchars($post['message_fmt']);
 }
