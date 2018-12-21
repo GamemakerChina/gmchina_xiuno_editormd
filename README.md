@@ -6,7 +6,7 @@ Editor.md for Xiuno BBS 4.0+
 ## 用法
 
 1. 下载最新版本并解压，将文件夹更名为 `gmchina-xiuno-editormd` 后在后台启动插件
-2. 修改当前使用的主题，在 id 和 name 为 message 的代码中加入两段 Hook：
+2. 修改当前使用的主题的 `post.htm` 文件，在 id 和 name 为 message 的代码中加入两段 Hook：
 ```html
 <!--{hook post_editor_before.htm}-->
 ```
@@ -37,5 +37,6 @@ Editor.md for Xiuno BBS 4.0+
 
 ## 已知问题
 
-1. 无法使用 Markdown 的引用块(`>`)，原因是 Xiuno 对特殊字符（`&`, `"`, `<`, `>`）进行转义导致语法被转义
+1. 无法使用 Markdown 的引用块(`>`)，原因是 XiunoBBS 对特殊字符（`&`, `"`, `<`, `>`）进行转义导致语法被转义（XiunoBBS的锅）
 2. 本地上传图片接口存储位置不规范（暂时）
+3. 使用快捷回复若有使用换行会插入 `<br>` 标签，在之后的编辑时会被转义(`&lt;br&gt;`)（XiunoBBS的锅）
