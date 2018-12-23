@@ -23,6 +23,24 @@ Editor.md for Xiuno BBS 4.0+
 ```
 3. Enjoy!~~~
 
+## 关于多个 Parsedown 版本
+
+| Parsedown 版本 | Parsedown Extra 版本 |
+| :------------: | :------------------: |
+| 1.5.4 | 0.7.0 |
+| 1.7.1 | 0.7.1 |
+| 1.8.0-beta5 | 0.8.0-beta1 |
+
+每个 Parsedown 版本均对应一个 Parsedown Extra 版本。
+
+1.5.4 用于 PHP 5.2 环境，原因是 Parsedown 从 1.6.0 开始不再对 PHP 5.2 提供支持，强行使用 1.6.0 以上版本会导致 500 错误。
+
+1.7.1 为目前最新的正式版本。
+
+1.8.0-beta5 为目前最新的 beta 版本
+
+如需使用不同版本请修改 `model_post_format_end.php` 前两行，默认使用 1.7.1。
+
 ## TODO List
 
 - [x] Editor.md 提供的所有功能
@@ -30,10 +48,11 @@ Editor.md for Xiuno BBS 4.0+
 - [x] 上传图片（保存到本地）
 - [x] 标准的语法高亮（`<pre><code class="language-(lang)"></code></pre>`）（支持 Prism.js 高亮）
 - [ ] 不需要手动在主题加入 Hook
+- [ ] 设置界面
 - [ ] 重写图片本地上传图片接口（插件内为 Editor.md 提供的范例）
 - [ ] 更多云存储的选择
 - [ ] 加入设置页面提供设置项
-- [ ] 发布后兼容 HTML
+- [ ] 发布兼容 HTML
 
 ## 已知问题
 
