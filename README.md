@@ -61,6 +61,8 @@ Editor.md for Xiuno BBS 4.0+
 
 虽然已经通过内置的过滤设置过滤掉了大部分危险标签，但依然可以输入不安全内容，如`[xss](javascript:alert%281%29)`
 
+目前输出已使用 HTML Purifier 过滤，输出内容已经是安全的内容了。
+
 Parsedown 则是从 1.7.0 开始加入了 Safe Mode 模式可以自动对输出进行净化，推荐使用 1.7.1 并将网站 PHP 版本更换为 5.3 及以上（推荐 PHP5.6 和 PHP7）
 
 如有修复方案请贡献代码，感谢
@@ -68,6 +70,20 @@ Parsedown 则是从 1.7.0 开始加入了 Safe Mode 模式可以自动对输出�
 ## 已知问题
 
 1. 无法使用 Markdown 的引用块(`>`)，原因是 XiunoBBS 对特殊字符（`&`, `"`, `<`, `>`）进行转义导致语法被转义（XiunoBBS的锅）  
+
     > 虽然可以通过直接调用 message （非 `message_fmt`）达到修复效果，但这样会导致 XSS 攻击，为了安全就只能这样咯
+
 2. 本地上传图片接口存储位置不规范（暂时）  
-~~3. 使用快捷回复若有使用换行会插入 `<br>` 标签，在之后的编辑时会被转义(`&lt;br&gt;`)~~（已修复，我的锅）
+
+3. ~~3. 使用快捷回复若有使用换行会插入 `<br>` 标签，在之后的编辑时会被转义(`&lt;br&gt;`)~~（已修复，我的锅）
+
+## 使用了
+
+- XiunoPHP
+- Editor.md
+- Parsedown (含 Parsedown Extra)
+- HTML Purifier
+
+## 协议
+
+MIT License
