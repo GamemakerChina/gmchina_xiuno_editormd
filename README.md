@@ -25,7 +25,7 @@ Editor.md for Xiuno BBS 4.0+
 
 ## 关于上传
 
-由于本地上传接口没按照基本法来写（不知道怎么使用附件相关函数），所以位置为 `upload/images`，所以没有 `images` 文件夹的需手动在 `upload` 下创建并修改插件目录下的 `upload/local/upload.php`如有标准方案可贡献代码。
+由于本地上传接口没按照标准来写（不知道怎么使用附件相关函数），所以位置为 `upload/images`，所以没有 `images` 文件夹的需手动在 `upload` 下创建并修改插件目录下的 `upload/local/upload.php`如有标准方案可贡献代码。
 
 ## 关于多个 Parsedown 版本
 
