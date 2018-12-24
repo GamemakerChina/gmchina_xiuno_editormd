@@ -9,6 +9,6 @@ $(function() {
         imageUpload : true,
         imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
         imageUploadURL : "plugin/gmchina_xiuno_editormd/upload/local/upload.php",
-        htmlDecode: "script, style, iframe, embed, div, a|on*, href"
+        htmlDecode: "script, style, iframe, embed, div|on*"
     });
 });
