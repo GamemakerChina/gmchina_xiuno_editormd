@@ -1,11 +1,11 @@
-# gmchina-xiuno-editormd
+# gmchina_xiuno_editormd
 Editor.md for Xiuno BBS 4.0+
 
 在 Xiuno BBS 中使用 Editor.md 创建帖子。
 
 ## 用法
 
-1. 下载最新版本并解压，将文件夹更名为 `gmchina-xiuno-editormd` 后在后台启动插件
+1. 下载最新版本并解压，将文件夹更名为 `gmchina_xiuno_editormd` 后在后台启动插件
 2. 修改当前使用的主题的 `post.htm` 文件，在 id 和 name 为 message 的代码中加入两段 Hook：
 ```html
 <!--{hook post_editor_before.htm}-->
