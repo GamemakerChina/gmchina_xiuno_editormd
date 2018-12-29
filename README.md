@@ -61,15 +61,15 @@ Editor.md for Xiuno BBS 4.0+
 
 ## 安全性问题
 
-由于 Editor.md 已经很长时间没有更新，其预览模式可以引发 XSS 攻击！
+~~由于 Editor.md 已经很长时间没有更新，其预览模式可以引发 XSS 攻击！~~
 
-虽然已经通过内置的过滤设置过滤掉了大部分危险标签，但依然可以输入不安全内容，如`[xss](javascript:alert%281%29)`
+~~虽然已经通过内置的过滤设置过滤掉了大部分危险标签，但依然可以输入不安全内容，如`[xss](javascript:alert%281%29)`~~
 
 目前输出已使用 HTML Purifier 过滤，输出内容已经是安全的内容了。
 
-Parsedown 则是从 1.7.0 开始加入了 Safe Mode 模式可以自动对输出进行净化，推荐使用 1.7.1 并将网站 PHP 版本更换为 5.3 及以上（推荐 PHP5.6 和 PHP7）
+2018-12-29：已使用 JS-XSS 过滤了预览模式的 XSS ，现可安全使用
 
-如有修复方案请贡献代码，感谢
+Parsedown 则是从 1.7.0 开始加入了 Safe Mode 模式可以自动对输出进行净化，推荐使用 1.7.1 并将网站 PHP 版本更换为 5.3 及以上（推荐 PHP5.6 和 PHP7）
 
 ## 已知问题
 
@@ -87,6 +87,7 @@ Parsedown 则是从 1.7.0 开始加入了 Safe Mode 模式可以自动对输出�
 - Editor.md
 - Parsedown (含 Parsedown Extra)
 - HTML Purifier
+- JS-XSS
 
 ## 协议
 
