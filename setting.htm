@@ -1,0 +1,92 @@
+<?php include _include(ADMIN_PATH.'view/htm/header.inc.htm');?>
+<div class="row">
+    <div class="col-lg-10 mx-auto">
+        <div class="card">
+            <div class="card-body">
+                <form action="<?php echo url('plugin-setting-gmchina_xiuno_editormd');?>" method="post" id="form">
+                    <p style="text-align:center;">Editor.md 设置</p>
+                    <hr class="mb-4" />
+                    <p style="text-align:center;">一般设置</p>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">宽度：</label>
+                        <div class="col-sm-9">
+                            <?php echo $width; ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">高度：</label>
+                        <div class="col-sm-9">
+                            <?php echo $height; ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">同步滚动：</label>
+                        <div class="col-sm-9">
+                            <?php echo $sync_scrolling; ?>
+                        </div>
+                    </div>
+
+                    <p style="text-align:center;">本地图片上传设置</p>
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">开启图片上传：</label>
+                        <div class="col-sm-9">
+                            <?php echo $img_upload; ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">支持的图片格式：</label>
+                        <div class="col-sm-9">
+                            <?php echo $img_upload_name; ?>
+                        </div>
+                    </div>
+
+                    <p style="text-align:center;">HTML 解析设置</p>
+                    <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">需过滤的 HTML 标签：</label>
+                            <div class="col-sm-9">
+                                <?php echo $html_decode; ?>
+                            </div>
+                        </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 form-control-label"></label>
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary btn-block" id="submit" data-loading-text="<?php echo lang('submiting');?>...">
+                                <?php echo lang('confirm');?>
+                            </button>
+                            <a role="button" class="btn btn-secondary btn-block mt-3" href="javascript:history.back();">
+                                <?php echo lang('back');?>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<?php include _include(ADMIN_PATH.'view/htm/footer.inc.htm');?>
+<script>
+    var jform = $("#form");
+    var jsubmit = $("#submit");
+    var referer = '<?php echo url("plugin-setting-gmchina_xiuno_editormd");?>';
+    jform.on('submit', function () {
+        jform.reset();
+        jsubmit.button('loading');
+        var postdata = jform.serialize();
+        $.xpost(jform.attr('action'), postdata, function (code, message) {
+            if (code == 0) {
+                $.alert(message);
+                jsubmit.text(message).delay(1000).button('reset').location(referer);
+            } else {
+                $.alert('提交失败');
+                jsubmit.button('reset');
+            }
+        });
+        return false;
+    });
+</script>
