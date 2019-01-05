@@ -31,12 +31,13 @@
 
                     <p style="text-align:center;">本地图片上传设置</p>
                     <div class="form-group row">
-                        <label class="col-sm-3 form-control-label">开启图片上传：</label>
+                        <label class="col-sm-3 form-control-label">图片上传：</label>
                         <div class="col-sm-9">
                             <?php echo $img_upload; ?>
                         </div>
                     </div>
 
+                    <?php if($editor_md_config['img_upload']==1){?>
                     <div class="form-group row">
                         <label class="col-sm-3 form-control-label">支持的图片格式：</label>
                         <div class="col-sm-9">
@@ -44,13 +45,131 @@
                         </div>
                     </div>
 
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">图片上传接口：</label>
+                        <div class="col-sm-9">
+                            <?php echo $image_upload_url; ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">图片跨域上传：</label>
+                        <div class="col-sm-9">
+                            <?php echo $cross_domain_upload; ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">图片跨域上传 Callback URL：</label>
+                        <div class="col-sm-9">
+                            <?php echo $upload_callback_url; ?>
+                        </div>
+                    </div>
+                    <?php }?>
+
                     <p style="text-align:center;">HTML 解析设置</p>
                     <div class="form-group row">
-                            <label class="col-sm-3 form-control-label">需过滤的 HTML 标签：</label>
-                            <div class="col-sm-9">
+                        <label class="col-sm-3 form-control-label">HTML 解析：</label>
+                        <div class="col-sm-9">
                                 <?php echo $html_decode; ?>
-                            </div>
                         </div>
+                    </div>
+
+                    <?php if($editor_md_config['html_decode']==1){?>
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">需过滤的 HTML 标签：</label>
+                        <div class="col-sm-9">
+                                <?php echo $html_decode_fliter; ?>
+                        </div>
+                    </div>
+                    <?php }?>
+
+                    <p style="text-align:center;">编辑器功能设置</p>
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">自动高度：</label>
+                        <div class="col-sm-9">
+                                <?php echo $autoheight; ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">只读模式：</label>
+                        <div class="col-sm-9">
+                                <?php echo $readonly; ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">代码折叠：</label>
+                        <div class="col-sm-9">
+                                <?php echo $codefold; ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">任务列表（GFM 功能）：</label>
+                        <div class="col-sm-9">
+                                <?php echo $tasklist; ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">@ 链接：</label>
+                        <div class="col-sm-9">
+                                <?php echo $atLink; ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">Email 链接：</label>
+                        <div class="col-sm-9">
+                                <?php echo $emailLink; ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">TeX / LaTeX 科学公式语言：</label>
+                        <div class="col-sm-9">
+                                <?php echo $tex; ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">FlowChart 流程图：</label>
+                        <div class="col-sm-9">
+                                <?php echo $flowChart; ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">SequenceDiagram 时序图 / 序列图：</label>
+                        <div class="col-sm-9">
+                                <?php echo $sequenceDiagram; ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">分页符：</label>
+                        <div class="col-sm-9">
+                                <?php echo $pageBreak; ?>
+                        </div>
+                    </div>
+                    <p style="text-align:center;">编辑器主题设置</p>
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">主题开关（关闭则为默认主题）：</label>
+                        <div class="col-sm-9">
+                                <?php echo $theme_onoff; ?>
+                        </div>
+                    </div>
+
+                    <?php if($editor_md_config['theme_onoff']==1){?>
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">主题：</label>
+                        <div class="col-sm-9">
+                                <?php echo $theme; ?>
+                        </div>
+                    </div>
+                    <?php }?>
 
                     <div class="form-group row">
                         <label class="col-sm-2 form-control-label"></label>
