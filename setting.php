@@ -123,7 +123,7 @@ if($method == 'GET') {
     $editor_md_config['readonly'] = param('readonly');
     $editor_md_config['theme_onoff'] = param('theme_onoff');
     $editor_md_config['theme'] = param('theme');
-    $editor_md_config['theme_preview'] = ('theme_preview');
+    $editor_md_config['theme_preview'] = param('theme_preview');
     $editor_md_config['codefold'] = param('codefold');
     $editor_md_config['tasklist'] = param('tasklist');
     $editor_md_config['atLink'] = param('atLink');

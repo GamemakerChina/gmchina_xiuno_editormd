@@ -66,12 +66,14 @@
                         </div>
                     </div>
 
+                    <?php if($editor_md_config['cross_domain_upload']=='true'){?>
                     <div class="form-group row">
                         <label class="col-sm-3 form-control-label">图片跨域上传 Callback URL：</label>
                         <div class="col-sm-9">
                             <?php echo $upload_callback_url; ?>
                         </div>
                     </div>
+                    <?php }?>
                     <?php }?>
 
                     <p style="text-align:center;">HTML 解析设置</p>

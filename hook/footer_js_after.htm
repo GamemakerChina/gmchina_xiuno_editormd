@@ -30,16 +30,22 @@ $(function() {
         syncScrolling: <?php echo $sync_scrolling_mode;?>,
         path: "plugin/gmchina_xiuno_editormd/editormd/lib/",
         imageUpload: <?php echo $editor_md_config['img_upload'];?>,
+        <?php if($editor_md_config['img_upload']=='true'){?>
         imageFormats: [<?php echo $editor_md_config['img_upload_formats'];?>],
         imageUploadURL: "plugin/gmchina_xiuno_editormd/upload/local/upload.php",
         crossDomainUpload: <?php echo $editor_md_config['cross_domain_upload'];?>,
+        <?php if($editor_md_config['cross_domain_upload']=='true'){?>
         uploadCallbackURL: "<?php echo $editor_md_config['upload_callback_url'];?>",
+        <?php }?>
+        <?php }?>
+        <?php if($editor_md_config['html_decode']=='true'){?>
         htmlDecode: "<?php echo $editor_md_config['html_decode_fliter'];?>",
+        <?php }?>
         autoHeight: <?php echo $editor_md_config['autoheight'];?>,
         readOnly: <?php echo $editor_md_config['readonly'];?>,
         <?php if($editor_md_config['theme_onoff']=='true'){?>
-        theme: <?php echo $editor_md_config['theme'];?>,
-        previewTheme: <?php echo $editor_md_config['theme_preview'];?>,
+        theme: "<?php echo $editor_md_config['theme'];?>",
+        previewTheme: "<?php echo $editor_md_config['theme_preview'];?>",
         <?php }?>
         codeFold: <?php echo $editor_md_config['codefold'];?>,
         taskList: <?php echo $editor_md_config['tasklist'];?>,
