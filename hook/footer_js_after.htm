@@ -7,4 +7,48 @@
 <script src="plugin/gmchina_xiuno_editormd/editormd/lib/underscore.min.js<?php echo $static_version;?>"></script>
 <script src="plugin/gmchina_xiuno_editormd/editormd/lib/xss.min.js<?php echo $static_version;?>"></script>
 <script src="plugin/gmchina_xiuno_editormd/editormd/editormd.js<?php echo $static_version;?>"></script>
-<script src="plugin/gmchina_xiuno_editormd/editormd/editormd.config.js<?php echo $static_version;?>"></script>
+
+<?php
+$editor_md_config = kv_get('editor_md_config');
+$sync_scrolling_mode = "";
+if($editor_md_config['sync_scrolling'] == 2)
+{
+    $sync_scrolling_mode = '"single"';
+}
+else
+{
+    $sync_scrolling_mode = $editor_md_config['sync_scrolling'];
+}
+?>
+
+<script>
+var initEditor;
+$(function() {
+    initEditor = editormd("editormd", {
+        width: "<?php echo $editor_md_config['width'];?>",
+        height: <?php echo $editor_md_config['height'];?>,
+        syncScrolling: <?php echo $sync_scrolling_mode;?>,
+        path: "plugin/gmchina_xiuno_editormd/editormd/lib/",
+        imageUpload: <?php echo $editor_md_config['img_upload'];?>,
+        imageFormats: [<?php echo $editor_md_config['img_upload_formats'];?>],
+        imageUploadURL: "plugin/gmchina_xiuno_editormd/upload/local/upload.php",
+        crossDomainUpload: <?php echo $editor_md_config['cross_domain_upload'];?>,
+        uploadCallbackURL: "<?php echo $editor_md_config['upload_callback_url'];?>",
+        htmlDecode: "<?php echo $editor_md_config['html_decode_fliter'];?>",
+        autoHeight: <?php echo $editor_md_config['autoheight'];?>,
+        readOnly: <?php echo $editor_md_config['readonly'];?>,
+        <?php if($editor_md_config['theme_onoff']=='true'){?>
+        theme: <?php echo $editor_md_config['theme'];?>,
+        previewTheme: <?php echo $editor_md_config['theme_preview'];?>,
+        <?php }?>
+        codeFold: <?php echo $editor_md_config['codefold'];?>,
+        taskList: <?php echo $editor_md_config['tasklist'];?>,
+        atLink: <?php echo $editor_md_config['atLink'];?>,
+        emailLink: <?php echo $editor_md_config['emailLink'];?>,
+        tex: <?php echo $editor_md_config['tex'];?>,
+        flowChart: <?php echo $editor_md_config['flowChart'];?>,
+        sequenceDiagram: <?php echo $editor_md_config['sequenceDiagram'];?>,
+        pageBreak: <?php echo $editor_md_config['pageBreak'];?>
+    });
+});
+</script>

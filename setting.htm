@@ -9,6 +9,13 @@
                     <p style="text-align:center;">一般设置</p>
 
                     <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">Parsedown 版本：</label>
+                        <div class="col-sm-9">
+                            <?php echo $parsedown_version; ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
                         <label class="col-sm-3 form-control-label">宽度：</label>
                         <div class="col-sm-9">
                             <?php echo $width; ?>
@@ -37,11 +44,11 @@
                         </div>
                     </div>
 
-                    <?php if($editor_md_config['img_upload']==1){?>
+                    <?php if($editor_md_config['img_upload']=='true'){?>
                     <div class="form-group row">
                         <label class="col-sm-3 form-control-label">支持的图片格式：</label>
                         <div class="col-sm-9">
-                            <?php echo $img_upload_name; ?>
+                            <?php echo $img_upload_formats; ?>
                         </div>
                     </div>
 
@@ -75,7 +82,7 @@
                         </div>
                     </div>
 
-                    <?php if($editor_md_config['html_decode']==1){?>
+                    <?php if($editor_md_config['html_decode']=='true'){?>
                     <div class="form-group row">
                         <label class="col-sm-3 form-control-label">需过滤的 HTML 标签：</label>
                         <div class="col-sm-9">
@@ -154,6 +161,7 @@
                                 <?php echo $pageBreak; ?>
                         </div>
                     </div>
+
                     <p style="text-align:center;">编辑器主题设置</p>
                     <div class="form-group row">
                         <label class="col-sm-3 form-control-label">主题开关（关闭则为默认主题）：</label>
@@ -162,11 +170,18 @@
                         </div>
                     </div>
 
-                    <?php if($editor_md_config['theme_onoff']==1){?>
+                    <?php if($editor_md_config['theme_onoff']=='true'){?>
                     <div class="form-group row">
                         <label class="col-sm-3 form-control-label">主题：</label>
                         <div class="col-sm-9">
                                 <?php echo $theme; ?>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">预览主题：</label>
+                        <div class="col-sm-9">
+                                <?php echo $theme_preview; ?>
                         </div>
                     </div>
                     <?php }?>
