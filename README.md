@@ -3,7 +3,7 @@ Editor.md for Xiuno BBS 4.0+
 
 在 Xiuno BBS 中使用 Editor.md 创建帖子。
 
-## 用法
+## 用法 #3
 
 1. 下载最新版本并解压，将文件夹更名为 `gmchina_xiuno_editormd` 后在后台启动插件
 2. 修改当前使用的主题的 `post.htm` 文件，在 id 和 name 为 message 的代码中加入两段 Hook：
@@ -52,7 +52,7 @@ Editor.md for Xiuno BBS 4.0+
 - [x] 上传图片（保存到本地）
 - [x] 标准的语法高亮（`<pre><code class="language-(lang)"></code></pre>`）（支持 Prism.js 高亮）
 - [x] Parsedown Extra 扩展 Markdown 更多功能（具体查看 [PHP Markdown Extra](https://michelf.ca/projects/php-markdown/extra)（HTML 插入并不能用，原因同已知问题第一条）
-- [ ] 不需要手动在主题加入 Hook
+- [ ] 不需要手动在主题加入 Hook （#3)
 - [x] 设置界面
 - [ ] 重写图片本地上传图片接口（插件内为 Editor.md 提供的范例）
 - [ ] 更多云存储的选择
