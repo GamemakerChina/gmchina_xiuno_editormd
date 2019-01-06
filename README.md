@@ -53,10 +53,9 @@ Editor.md for Xiuno BBS 4.0+
 - [x] 标准的语法高亮（`<pre><code class="language-(lang)"></code></pre>`）（支持 Prism.js 高亮）
 - [x] Parsedown Extra 扩展 Markdown 更多功能（具体查看 [PHP Markdown Extra](https://michelf.ca/projects/php-markdown/extra)（HTML 插入并不能用，原因同已知问题第一条）
 - [ ] 不需要手动在主题加入 Hook
-- [x] 设置界面（只有界面，暂时不会影响到编辑器配置）
+- [x] 设置界面
 - [ ] 重写图片本地上传图片接口（插件内为 Editor.md 提供的范例）
 - [ ] 更多云存储的选择
-- [ ] 加入设置页面提供设置项
 - [ ] 发布兼容 HTML
 
 ## 安全性问题
