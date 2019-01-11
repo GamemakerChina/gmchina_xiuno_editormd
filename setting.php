@@ -2,10 +2,23 @@
 !defined('DEBUG') AND exit('Access Denied.');
 
 $parsedown_version = param('parsedown_version');
+//图片上传 Start
 $img_upload = param('img_upload');
+$img_upload_formats = param('img_upload_formats');
+$img_upload_service = param('img_upload_service');
+$cross_domain_upload = param('cross_domain_upload');
+$upload_callback_url = param('upload_callback_url');
+//图片上传 End
+//七牛 Start
+$qiniu_bucket = param('qiniu_bucket');
+$qiniu_accessKey = param('qiniu_accessKey');
+$qiniu_secretKey = param('qiniu_secretKey');
+$qiniu_class_type = param('qiniu_class_type');
+$qiniu_cdnurl = param('qiniu_cdnurl');
+$qiniu_mimetype = param('qiniu_mimetype');
+//七牛 End
 $width = param('width');
 $height = param('height');
-$img_upload_formats = param('img_upload_formats');
 $html_decode = param('html_decoden');
 $html_decode_fliter = param('html_decode_fliter');
 $sync_scrolling = param('sync_scrolling');
@@ -24,9 +37,7 @@ $tex = param('tex');
 $flowChart = param('flowChart');
 $sequenceDiagram = param('sequenceDiagram');
 $pageBreak = param('pageBreak');
-$image_upload_url = param('image_upload_url');
-$cross_domain_upload = param('cross_domain_upload');
-$upload_callback_url = param('upload_callback_url');
+
 $editor_md_config = kv_get('editor_md_config');
 
 if($method == 'GET') {
@@ -55,9 +66,15 @@ if($method == 'GET') {
             'flowChart'=>$flowChart,
             'sequenceDiagram'=>$sequenceDiagram,
             'pageBreak'=>$pageBreak,
-            'image_upload_url'=>$image_upload_url,
+            'img_upload_service'=>$img_upload_service,
             'cross_domain_upload'=>$cross_domain_upload,
-            'upload_callback_url'=>$upload_callback_url
+            'upload_callback_url'=>$upload_callback_url,
+            'qiniu_bucket'=>$qiniu_bucket,
+            'qiniu_accessKey'=>$qiniu_accessKey,
+            'qiniu_secretKey'=>$qiniu_secretKey,
+            'qiniu_class_type'=>$qiniu_class_type,
+            'qiniu_cdnurl'=>$qiniu_cdnurl,
+            'qiniu_mimetype'=>$qiniu_mimetype
         );
         kv_set('editor_md_config', $editor_md_config);
     }
@@ -66,7 +83,7 @@ if($method == 'GET') {
     //图片上传
     $img_upload = form_radio('img_upload', array('true'=>'开启', 'false'=>'关闭'), $editor_md_config['img_upload']);
     $img_upload_formats = form_text('img_upload_formats', $editor_md_config['img_upload_formats'], '100%', '使用 ‘,’ 隔开');
-    $image_upload_url = form_text('image_upload_url', $editor_md_config['image_upload_url'], '100%', '');
+    $img_upload_service = form_radio('img_upload_service', array('local'=>'本地', 'qiniu'=>'七牛'), $editor_md_config['img_upload_service']);
     $cross_domain_upload = form_radio('cross_domain_upload', array('true'=>'开启', 'false'=>'关闭'), $editor_md_config['cross_domain_upload']);
     $upload_callback_url = form_text('upload_callback_url', $editor_md_config['upload_callback_url'], '100%', '');
     //滚动
@@ -109,7 +126,7 @@ if($method == 'GET') {
     $editor_md_config['parsedown_version'] = param('parsedown_version');
     $editor_md_config['img_upload'] = param('img_upload');
     $editor_md_config['img_upload_formats'] = param('img_upload_formats');
-    $editor_md_config['image_upload_url'] = param('image_upload_url');
+    $editor_md_config['img_upload_service'] = param('img_upload_service');
     $editor_md_config['cross_domain_upload'] = param('cross_domain_upload');
     $editor_md_config['upload_callback_url'] = param('upload_callback_url');
 	$editor_md_config['width'] = param('width');

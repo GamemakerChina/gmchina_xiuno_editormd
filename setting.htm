@@ -53,11 +53,15 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-3 form-control-label">图片上传接口：</label>
+                        <label class="col-sm-3 form-control-label">图片上传服务：</label>
                         <div class="col-sm-9">
-                            <?php echo $image_upload_url; ?>
+                            <?php echo $img_upload_service; ?>
                         </div>
                     </div>
+
+                    <?php if($editor_md_config['img_upload_service']=='qiniu'){?>
+
+                    <?php }?>
 
                     <div class="form-group row">
                         <label class="col-sm-3 form-control-label">图片跨域上传：</label>

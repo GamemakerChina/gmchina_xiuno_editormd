@@ -32,7 +32,7 @@ $(function() {
         imageUpload: <?php echo $editor_md_config['img_upload'];?>,
         <?php if($editor_md_config['img_upload']=='true'){?>
         imageFormats: [<?php echo $editor_md_config['img_upload_formats'];?>],
-        imageUploadURL: "plugin/gmchina_xiuno_editormd/upload/local/upload.php",
+        imageUploadURL: "plugin/gmchina_xiuno_editormd/upload/<?php echo $editor_md_config['img_upload_service'];?>/upload.php",
         crossDomainUpload: <?php echo $editor_md_config['cross_domain_upload'];?>,
         <?php if($editor_md_config['cross_domain_upload']=='true'){?>
         uploadCallbackURL: "<?php echo $editor_md_config['upload_callback_url'];?>",
