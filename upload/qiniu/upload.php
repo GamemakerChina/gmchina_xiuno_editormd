@@ -1,4 +1,4 @@
-if($action == 'xiaopang_editor') {
+if($action == 'gmchina_xiuno_editormd') {
     $user = user_read($uid);
     user_login_check();
     
@@ -23,9 +23,9 @@ if($action == 'xiaopang_editor') {
     }
     
 
-    require APP_PATH.'plugin/xiaopang_editor/qiniu/Qiniu/autoload.php';
-    //require 'plugin/xiaopang_editor/qiniu/Qiniu/src/Qiniu/Auth.php';
-    $config = include(APP_PATH.'plugin/xiaopang_editor/config.php');
+    require APP_PATH.'plugin/gmchina_xiuno_editormd/upload/qiniu/Qiniu/autoload.php';
+    //require 'plugin/gmchina_xiuno_editormd/upload/qiniu/Qiniu/src/Qiniu/Auth.php';
+    $config = include(APP_PATH.'plugin/gmchina_xiuno_editormd/upload/qiniu/config.php');
     
     $file=$_FILES['editormd-image-file'];
     $file['ext']    =   pathinfo($file['name'], PATHINFO_EXTENSION);

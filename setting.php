@@ -2,21 +2,20 @@
 !defined('DEBUG') AND exit('Access Denied.');
 
 $parsedown_version = param('parsedown_version');
-//图片上传 Start
+//图片上传
 $img_upload = param('img_upload');
 $img_upload_formats = param('img_upload_formats');
 $img_upload_service = param('img_upload_service');
 $cross_domain_upload = param('cross_domain_upload');
 $upload_callback_url = param('upload_callback_url');
-//图片上传 End
-//七牛 Start
+//七牛
 $qiniu_bucket = param('qiniu_bucket');
 $qiniu_accessKey = param('qiniu_accessKey');
 $qiniu_secretKey = param('qiniu_secretKey');
 $qiniu_class_type = param('qiniu_class_type');
 $qiniu_cdnurl = param('qiniu_cdnurl');
 $qiniu_mimetype = param('qiniu_mimetype');
-//七牛 End
+//杂项
 $width = param('width');
 $height = param('height');
 $html_decode = param('html_decoden');
@@ -86,6 +85,13 @@ if($method == 'GET') {
     $img_upload_service = form_radio('img_upload_service', array('local'=>'本地', 'qiniu'=>'七牛'), $editor_md_config['img_upload_service']);
     $cross_domain_upload = form_radio('cross_domain_upload', array('true'=>'开启', 'false'=>'关闭'), $editor_md_config['cross_domain_upload']);
     $upload_callback_url = form_text('upload_callback_url', $editor_md_config['upload_callback_url'], '100%', '');
+    //七牛
+    $qiniu_bucket = form_text('qiniu_bucket', $editor_md_config['qiniu_bucket'], '100%', '');
+    $qiniu_accessKey = form_text('qiniu_accessKey', $editor_md_config['qiniu_accessKey'], '100%', '');
+    $qiniu_secretKey = form_text('qiniu_secretKey', $editor_md_config['qiniu_secretKey'], '100%', '');
+    $qiniu_class_type = form_text('qiniu_class_type', $editor_md_config['qiniu_class_type'], '100%', '');
+    $qiniu_cdnurl = form_text('qiniu_cdnurl', $editor_md_config['qiniu_cdnurl'], '100%', '');
+    $qiniu_mimetype = form_text('qiniu_mimetype', $editor_md_config['qiniu_mimetype'], '100%', '');
     //滚动
     $sync_scrolling = form_radio('sync_scrolling', array('true'=>'双向滚动', 2=>'单向滚动', 'false'=>'关闭'), $editor_md_config['sync_scrolling']);
     //长度宽度
@@ -129,6 +135,12 @@ if($method == 'GET') {
     $editor_md_config['img_upload_service'] = param('img_upload_service');
     $editor_md_config['cross_domain_upload'] = param('cross_domain_upload');
     $editor_md_config['upload_callback_url'] = param('upload_callback_url');
+    $editor_md_config['qiniu_bucket'] = param('qiniu_bucket');
+    $editor_md_config['qiniu_accessKey'] = param('qiniu_accessKey');
+    $editor_md_config['qiniu_secretKey'] = param('qiniu_secretKey');
+    $editor_md_config['qiniu_class_type'] = param('qiniu_class_type');
+    $editor_md_config['qiniu_cdnurl'] = param('qiniu_cdnurl');
+    $editor_md_config['qiniu_mimetype'] = param('qiniu_mimetype');
 	$editor_md_config['width'] = param('width');
 	$editor_md_config['height'] = param('height');
 	$editor_md_config['sync_scrolling'] = param('sync_scrolling');
