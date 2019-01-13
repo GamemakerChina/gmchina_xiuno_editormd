@@ -161,8 +161,30 @@ if($method == 'GET') {
     $editor_md_config['flowChart'] = param('flowChart');
     $editor_md_config['sequenceDiagram'] = param('sequenceDiagram');
     $editor_md_config['pageBreak'] = param('pageBreak');
-	kv_set('editor_md_config', $editor_md_config);	
+    kv_set('editor_md_config', $editor_md_config);
     
     message(0, '修改成功');
+    
+    $file = fopen(APP_PATH."plugin/gmchina_xiuno_editormd/upload/qiniu/config.php", "w");
+    $config_data = "<?php
+        return array(
+            'bucket' => '{$editor_md_config['qiniu_bucket']}',
+            'accessKey' => '{$editor_md_config['qiniu_accessKey']}',
+            'secretKey' => '{$editor_md_config['qiniu_secretKey']}',
+            'class_type' => '{$editor_md_config['qiniu_class_type']}',
+            'cdnurl' => '{$editor_md_config['qiniu_cdnurl']}',
+            'mimetype' => '{$editor_md_config['qiniu_mimetype']}',
+        );";
+    try{
+        $res = fwrite($file, $config_data);
+        fclose($file);
+        if ($res){
+            message(1, '保存成功');
+        }else{
+            message(-1, '保存失败');
+        }
+    }catch (Exception $e){
+        message(-1, $e->getMessage());
+    }
 }
 ?>
