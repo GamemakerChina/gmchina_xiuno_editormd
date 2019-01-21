@@ -40,43 +40,6 @@ $pageBreak = param('pageBreak');
 $editor_md_config = kv_get('editor_md_config');
 
 if($method == 'GET') {
-    if(empty($editor_md_config)) {
-        $editor_md_config = array(
-            'parsedown_version'=>$parsedown_version, 
-            'img_upload'=>$img_upload,
-            'width'=>$width,
-            'height'=>$height,
-            'img_upload_formats'=>$img_upload_formats,
-            'html_decode'=>$html_decode,
-            'html_decode_fliter'=>$html_decode_fliter,
-            'sync_scrolling'=>$sync_scrolling,
-            'custom_toolbar'=>$custom_toolbar,
-            'custom_toolbar_onoff'=>$custom_toolbar_onoff,
-            'autoheight'=>$autoheight,
-            'readonly'=>$readonly,
-            'theme_onoff'=>$theme_onoff,
-            'theme'=>$theme,
-            'theme_preview'=>$theme_preview,
-            'codefold'=>$codefold,
-            'tasklist'=>$tasklist,
-            'atLink'=>$atLink,
-            'emailLink'=>$emailLink,
-            'tex'=>$tex,
-            'flowChart'=>$flowChart,
-            'sequenceDiagram'=>$sequenceDiagram,
-            'pageBreak'=>$pageBreak,
-            'img_upload_service'=>$img_upload_service,
-            'cross_domain_upload'=>$cross_domain_upload,
-            'upload_callback_url'=>$upload_callback_url,
-            'qiniu_bucket'=>$qiniu_bucket,
-            'qiniu_accessKey'=>$qiniu_accessKey,
-            'qiniu_secretKey'=>$qiniu_secretKey,
-            'qiniu_class_type'=>$qiniu_class_type,
-            'qiniu_cdnurl'=>$qiniu_cdnurl,
-            'qiniu_mimetype'=>$qiniu_mimetype
-        );
-        kv_set('editor_md_config', $editor_md_config);
-    }
     //Parsedown 版本切换
     $parsedown_version = form_radio('parsedown_version', array('1.8.0-beta5'=>'1.8.0-beta5', '1.7.1'=>'1.7.1', '1.5.4'=>'1.5.4（用于 PHP5.2）'), $editor_md_config['parsedown_version']);
     //图片上传
