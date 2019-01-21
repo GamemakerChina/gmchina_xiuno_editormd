@@ -2,7 +2,7 @@
 
 $editor_md_config = array(
     'parsedown_version'=>'1.7.1', 
-    'img_upload'=>true,
+    'img_upload'=>'true',
     'width'=>'100%',
     'height'=>640,
     'img_upload_formats'=>'jpg,png,bmp,jpeg,gif,webp',
