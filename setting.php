@@ -95,8 +95,8 @@ if($method == 'GET') {
     //滚动
     $sync_scrolling = form_radio('sync_scrolling', array('true'=>'双向滚动', 2=>'单向滚动', 'false'=>'关闭'), $editor_md_config['sync_scrolling']);
     //长度宽度
-    $width = form_text('width', $editor_md_config['width'], '100%', '若为百分比需带双引号');
-    $height = form_text('height', $editor_md_config['height'], '100%', '若为百分比需带双引号');
+    $width = form_text('width', $editor_md_config['width'], '100%', '值为百分比');
+    $height = form_text('height', $editor_md_config['height'], '100%', '值为具体数值，单位px');
     //HTML解析
     $html_decode = form_radio('html_decode', array('true'=>'开启', 'false'=>'关闭'), $editor_md_config['html_decode']);
     $html_decode_fliter = form_text('html_decode_fliter', $editor_md_config['html_decode_fliter'], '100%', '使用 ‘,’ 隔开');
