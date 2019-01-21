@@ -7,7 +7,7 @@ $res=array(
 
 require("Qiniu/autoload.php");
 //require 'plugin/gmchina_xiuno_editormd/upload/qiniu/Qiniu/src/Qiniu/Auth.php';
-$config = include("config.php")
+$config = include("config.php");
 
 $name='editormd-image-file';
 $file=$_FILES[$name];
