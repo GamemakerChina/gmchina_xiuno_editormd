@@ -6,6 +6,22 @@
                 <form action="<?php echo url('plugin-setting-gmchina_xiuno_editormd');?>" method="post" id="form">
                     <p style="text-align:center;">Editor.md 设置</p>
                     <hr class="mb-4" />
+                    <?php if($editor_md_config['edit_info']==0){?>
+                        <p>
+                            如果您第一次使用编辑器，请修改当前主题以使用本编辑器。
+                            请找到当前主题的<code>post.htm</code>文件，如奇梦主题：青绿色调模版位于<code>qimeng_theme_green\overwrite\view\htm</code>下。
+                            在当前主题下在 id 和 name 为 message 的代码中加入两段 Hook 于 textarea 标签的上下两行：
+                            <pre>
+<code>&lt;!--{hook post_editor_before.htm}--&gt;<br>&lt;!--{hook post_editor_after.htm}--&gt;</code>
+                            </pre>
+                            范例：
+                            <pre>
+<code>&lt;div class=&quot;form-group&quot;&gt;<br>&lt;!--{hook post_editor_before.htm}--&gt;<br>&lt;textarea class=&quot;form-control&quot; placeholder=&quot;&lt;?php echo lang(&#x27;message&#x27;);?&gt;&quot; name=&quot;message&quot; id=&quot;message&quot;&gt;&lt;?php echo $form_message;?&gt;&lt;/textarea&gt;<br>&lt;!--{hook post_editor_after.htm}--&gt;<br>&lt;/div&gt;</code>
+                            </pre>
+                            <br />
+                            <?php echo $edit_info; ?>
+                        </p>
+                    <?php }?>
                     <p style="text-align:center;">一般设置</p>
 
                     <div class="form-group row">

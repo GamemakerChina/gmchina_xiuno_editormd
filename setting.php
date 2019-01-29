@@ -36,6 +36,8 @@ $tex = param('tex');
 $flowChart = param('flowChart');
 $sequenceDiagram = param('sequenceDiagram');
 $pageBreak = param('pageBreak');
+//安装后提示
+$edit_info = param('edit_info');
 
 $editor_md_config = kv_get('editor_md_config');
 
@@ -58,8 +60,8 @@ if($method == 'GET') {
     //滚动
     $sync_scrolling = form_radio('sync_scrolling', array('true'=>'双向滚动', 2=>'单向滚动', 'false'=>'关闭'), $editor_md_config['sync_scrolling']);
     //长度宽度
-    $width = form_text('width', $editor_md_config['width'], '100%', '值为百分比');
-    $height = form_text('height', $editor_md_config['height'], '100%', '值为具体数值，单位px');
+    $width = form_text('width', $editor_md_config['width'], '100%', '若为百分比需带双引号');
+    $height = form_text('height', $editor_md_config['height'], '100%', '若为百分比需带双引号');
     //HTML解析
     $html_decode = form_radio('html_decode', array('true'=>'开启', 'false'=>'关闭'), $editor_md_config['html_decode']);
     $html_decode_fliter = form_text('html_decode_fliter', $editor_md_config['html_decode_fliter'], '100%', '使用 ‘,’ 隔开');
@@ -89,6 +91,8 @@ if($method == 'GET') {
     $sequenceDiagram = form_radio('sequenceDiagram', array('true'=>'开启', 'false'=>'关闭'), $editor_md_config['sequenceDiagram']);
     //分页符
     $pageBreak = form_radio('pageBreak', array('true'=>'开启', 'false'=>'关闭'), $editor_md_config['pageBreak']);
+    //安装后提示
+    $edit_info = form_checkbox('edit_info', 0, 不再提示, 1);
 
     include _include(APP_PATH.'plugin/gmchina_xiuno_editormd/setting.htm');
 } else {
@@ -124,6 +128,7 @@ if($method == 'GET') {
     $editor_md_config['flowChart'] = param('flowChart');
     $editor_md_config['sequenceDiagram'] = param('sequenceDiagram');
     $editor_md_config['pageBreak'] = param('pageBreak');
+    $editor_md_config['edit_info'] = param('edit_info');
     kv_set('editor_md_config', $editor_md_config);
     
     message(0, '修改成功');

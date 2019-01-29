@@ -32,7 +32,8 @@ $editor_md_config = array(
     "qiniu_secretKey"=>"",
     "qiniu_class_type"=>"",
     "qiniu_cdnurl"=>"",
-    "qiniu_mimetype"=>""
+    "qiniu_mimetype"=>"",
+    'edit_info'=>0
 );
 kv_set("editor_md_config", $editor_md_config);
 
