@@ -92,7 +92,7 @@ if($method == 'GET') {
     //分页符
     $pageBreak = form_radio('pageBreak', array('true'=>'开启', 'false'=>'关闭'), $editor_md_config['pageBreak']);
     //安装后提示
-    $edit_info = form_checkbox('edit_info', 0, 不再提示, 1);
+    $edit_info = form_checkbox('edit_info', $editor_md_config['edit_info'], 不再提示, 1);
 
     include _include(APP_PATH.'plugin/gmchina_xiuno_editormd/setting.htm');
 } else {

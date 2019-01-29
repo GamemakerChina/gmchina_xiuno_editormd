@@ -19,9 +19,15 @@
 <code>&lt;div class=&quot;form-group&quot;&gt;<br>&lt;!--{hook post_editor_before.htm}--&gt;<br>&lt;textarea class=&quot;form-control&quot; placeholder=&quot;&lt;?php echo lang(&#x27;message&#x27;);?&gt;&quot; name=&quot;message&quot; id=&quot;message&quot;&gt;&lt;?php echo $form_message;?&gt;&lt;/textarea&gt;<br>&lt;!--{hook post_editor_after.htm}--&gt;<br>&lt;/div&gt;</code>
                             </pre>
                             <br />
-                            <?php echo $edit_info; ?>
                         </p>
                     <?php }?>
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">修改代码提示：</label>
+                        <div class="col-sm-9">
+                            <?php echo $edit_info; ?>
+                        </div>
+                    </div>
+                    
                     <p style="text-align:center;">一般设置</p>
 
                     <div class="form-group row">
