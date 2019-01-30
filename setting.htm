@@ -19,6 +19,7 @@
 <code>&lt;div class=&quot;form-group&quot;&gt;<br>&lt;!--{hook post_editor_before.htm}--&gt;<br>&lt;textarea class=&quot;form-control&quot; placeholder=&quot;&lt;?php echo lang(&#x27;message&#x27;);?&gt;&quot; name=&quot;message&quot; id=&quot;message&quot;&gt;&lt;?php echo $form_message;?&gt;&lt;/textarea&gt;<br>&lt;!--{hook post_editor_after.htm}--&gt;<br>&lt;/div&gt;</code>
                             </pre>
                             <br />
+                            如果您当前使用的主题已经兼容了本编辑器，可以忽略这个提示。
                         </p>
                     <?php }?>
                     <div class="form-group row">
@@ -27,9 +28,17 @@
                             <?php echo $edit_info; ?>
                         </div>
                     </div>
-                    
-                    <p style="text-align:center;">一般设置</p>
+                    <p style="text-align:center;">版本信息</p>
+                    <hr class="mb-4" />
+                    <p>Editor.md 版本：2.0.1 (<a href="https://github.com/hawtim/editor.md" target="_blank">hawtim ver.</a>)</p>
+                    <p>XiunoPHP 版本：4.0</p>
+                    <p>HTML Purifler 版本：4.10.0</p>
+                    <p>JS-XSS 版本：1.0.3</p>
+                    <p>PHP 版本：<?php echo PHP_VERSION; ?></p>
+                    <p>注意：当 PHP 大版本为 5.2 时插件功能会受到限制</p>
 
+                    <p style="text-align:center;">一般设置</p>
+                    <hr class="mb-4" />
                     <div class="form-group row">
                         <label class="col-sm-3 form-control-label">Parsedown 版本：</label>
                         <div class="col-sm-9">
@@ -59,6 +68,7 @@
                     </div>
 
                     <p style="text-align:center;">本地图片上传设置</p>
+                    <hr class="mb-4" />
                     <div class="form-group row">
                         <label class="col-sm-3 form-control-label">图片上传：</label>
                         <div class="col-sm-9">
@@ -138,6 +148,7 @@
                     <?php }?>
 
                     <p style="text-align:center;">HTML 解析设置</p>
+                    <hr class="mb-4" />
                     <div class="form-group row">
                         <label class="col-sm-3 form-control-label">HTML 解析：</label>
                         <div class="col-sm-9">
@@ -155,6 +166,7 @@
                     <?php }?>
 
                     <p style="text-align:center;">编辑器功能设置</p>
+                    <hr class="mb-4" />
                     <div class="form-group row">
                         <label class="col-sm-3 form-control-label">自动高度：</label>
                         <div class="col-sm-9">
@@ -226,6 +238,7 @@
                     </div>
 
                     <p style="text-align:center;">编辑器主题设置</p>
+                    <hr class="mb-4" />
                     <div class="form-group row">
                         <label class="col-sm-3 form-control-label">主题开关（关闭则为默认主题）：</label>
                         <div class="col-sm-9">

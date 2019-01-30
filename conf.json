@@ -1,7 +1,7 @@
 {
     "name": "Editor.md",
     "brief": "基于 Editor.md 的 Markdown 编辑器",
-    "version": "1.1",
+    "version": "1.2",
     "bbs_version": "4.0",
     "installed": 1,
     "enable": 1,

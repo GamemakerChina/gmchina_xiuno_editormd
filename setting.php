@@ -47,7 +47,7 @@ if($method == 'GET') {
     //图片上传
     $img_upload = form_radio('img_upload', array('true'=>'开启', 'false'=>'关闭'), $editor_md_config['img_upload']);
     $img_upload_formats = form_text('img_upload_formats', $editor_md_config['img_upload_formats'], '100%', '使用 ‘,’ 隔开');
-    $img_upload_service = form_radio('img_upload_service', array('local'=>'本地', 'qiniu'=>'七牛'), $editor_md_config['img_upload_service']);
+    $img_upload_service = form_radio('img_upload_service', array('local'=>'本地', 'qiniu'=>'七牛（PHP 5.3+）'), $editor_md_config['img_upload_service']);
     $cross_domain_upload = form_radio('cross_domain_upload', array('true'=>'开启', 'false'=>'关闭'), $editor_md_config['cross_domain_upload']);
     $upload_callback_url = form_text('upload_callback_url', $editor_md_config['upload_callback_url'], '100%', '');
     //七牛
