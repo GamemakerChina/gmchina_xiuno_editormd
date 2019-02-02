@@ -13,5 +13,5 @@ $config = HTMLPurifier_Config::createDefault();
 $purifier = new HTMLPurifier($config);
 
 if($post['doctype'] == 2){
-    $post['message_fmt'] = $purifier->purify($Extra->text($post['message_fmt']));
+    $post['message_fmt'] = $purifier->purify($Extra->text($post['message']));
 }
