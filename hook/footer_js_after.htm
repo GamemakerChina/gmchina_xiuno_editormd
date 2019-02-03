@@ -23,6 +23,9 @@ else
 $agent = strtolower($_SERVER['HTTP_USER_AGENT']);
 $is_iphone = (strpos($agent, 'iphone'));
 $is_android = (strpos($agent, 'android'));
+$is_pc = (strpos($agent, 'windows nt'));
+$is_mac = (strpos($agent, 'mac os'));
+$is_ipad = (strpos($agent, 'ipad'));
 ?>
 
 <script>
@@ -61,6 +64,16 @@ $(function() {
         tex: <?php echo $editor_md_config['tex'];?>,
         flowChart: <?php echo $editor_md_config['flowChart'];?>,
         sequenceDiagram: <?php echo $editor_md_config['sequenceDiagram'];?>,
+        <?php if($is_pc||$is_mac||$is_ipad){?>
+        toolbarIcons : function() {
+            return editormd.toolbarModes[full];
+        },
+        <?php }?>
+        <?php if($is_iphone||$is_android){?>
+        toolbarIcons : function() {
+            return ["undo", "redo", "|", "link", "image", "code", "|", "preview", "clear", "search"]
+        },
+        <?php }?>
         pageBreak: <?php echo $editor_md_config['pageBreak'];?>
     });
 });
