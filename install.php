@@ -1,4 +1,8 @@
 <?php
+!defined('DEBUG') AND exit('Forbidden');
+
+$tablepre = $db->tablepre;
+db_exec("ALTER TABLE {$tablepre}post ADD COLUMN message_cache int(11) NULL DEFAULT '' COMMENT 'Editor.md 缓存';");
 
 $editor_md_config = array(
     "parsedown_version"=>"1.7.1", 
