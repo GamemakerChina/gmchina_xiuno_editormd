@@ -3,7 +3,7 @@
 <script src="plugin/gmchina_xiuno_editormd/editormd/lib/marked.min.js<?php echo $static_version;?>"></script>
 <script src="plugin/gmchina_xiuno_editormd/editormd/lib/prettify.min.js<?php echo $static_version;?>"></script>
 <script src="plugin/gmchina_xiuno_editormd/editormd/lib/raphael.min.js<?php echo $static_version;?>"></script>
-<script src="plugin/gmchina_xiuno_editormd/editormd/lib/sequence-diagram.min.js<?php echo $static_version;?>"></script>
+<!--<script src="plugin/gmchina_xiuno_editormd/editormd/lib/sequence-diagram.min.js<?php echo $static_version;?>"></script>-->
 <script src="plugin/gmchina_xiuno_editormd/editormd/lib/underscore.min.js<?php echo $static_version;?>"></script>
 <script src="plugin/gmchina_xiuno_editormd/editormd/lib/xss.min.js<?php echo $static_version;?>"></script>
 <script src="plugin/gmchina_xiuno_editormd/editormd/editormd.js<?php echo $static_version;?>"></script>
@@ -19,12 +19,19 @@ else
 {
     $sync_scrolling_mode = $editor_md_config['sync_scrolling'];
 }
+
+$agent = strtolower($_SERVER['HTTP_USER_AGENT']);
+$is_iphone = (strpos($agent, 'iphone'));
+$is_android = (strpos($agent, 'android'));
 ?>
 
 <script>
 var initEditor;
 $(function() {
     initEditor = editormd("editormd", {
+        <?php if($is_iphone||$is_android){?>
+        watch: false,
+        <?php }?>
         width: "<?php echo $editor_md_config['width'];?>",
         height: <?php echo $editor_md_config['height'];?>,
         syncScrolling: <?php echo $sync_scrolling_mode;?>,
