@@ -30,6 +30,7 @@
 			delphi        : ["Delphi/Pascal", "pascal"],
 			erlang        : ["Erlang", "erlang"],
 			go            : ["Golang", "go"],
+			gml           : ["GameMaker Language", "gml"],
 			groovy        : ["Groovy", "groovy"],
 			html          : ["HTML", "text/html"],
 			java          : ["Java", "clike"],

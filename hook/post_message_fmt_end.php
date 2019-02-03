@@ -1,0 +1,1 @@
+$arr['message_cache'] ="";
