@@ -85,7 +85,7 @@ Parsedown 则是从 1.7.0 开始加入了 Safe Mode 模式可以自动对输出�
 ## 使用了
 
 - XiunoPHP
-- Editor.md
+- Editor.md ([hawtim ver.](https://github.com/hawtim/editor.md))
 - Parsedown (含 Parsedown Extra)
 - HTML Purifier
 - JS-XSS
