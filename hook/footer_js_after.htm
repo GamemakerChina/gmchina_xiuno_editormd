@@ -6,7 +6,7 @@
 <!--<script src="plugin/gmchina_xiuno_editormd/editormd/lib/sequence-diagram.min.js<?php echo $static_version;?>"></script>-->
 <script src="plugin/gmchina_xiuno_editormd/editormd/lib/underscore.min.js<?php echo $static_version;?>"></script>
 <script src="plugin/gmchina_xiuno_editormd/editormd/lib/xss.min.js<?php echo $static_version;?>"></script>
-<script src="plugin/gmchina_xiuno_editormd/editormd/editormd.js<?php echo $static_version;?>"></script>
+<script src="plugin/gmchina_xiuno_editormd/editormd/editormd.min.js<?php echo $static_version;?>"></script>
 
 <?php
 $editor_md_config = kv_get('editor_md_config');
@@ -55,6 +55,7 @@ $(function() {
         readOnly: <?php echo $editor_md_config['readonly'];?>,
         <?php if($editor_md_config['theme_onoff']=='true'){?>
         theme: "<?php echo $editor_md_config['theme'];?>",
+        editorTheme: "<?php echo $editor_md_config['theme_editor'];?>",
         previewTheme: "<?php echo $editor_md_config['theme_preview'];?>",
         <?php }?>
         codeFold: <?php echo $editor_md_config['codefold'];?>,
@@ -65,7 +66,7 @@ $(function() {
         flowChart: <?php echo $editor_md_config['flowChart'];?>,
         sequenceDiagram: <?php echo $editor_md_config['sequenceDiagram'];?>,
         <?php if($is_iphone||$is_android){?>
-        toolbarIcons : function() {
+        toolbarIcons: function() {
             return ["undo", "redo", "|", "link", "image", "code", "|", "preview", "clear", "search"]
         },
         <?php }?>

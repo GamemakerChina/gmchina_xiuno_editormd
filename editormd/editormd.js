@@ -432,11 +432,9 @@
       }
       editor.css({
         width: typeof settings.width === "number" ?
-          settings.width + "px" :
-          settings.width,
+          settings.width + "px" : settings.width,
         height: typeof settings.height === "number" ?
-          settings.height + "px" :
-          settings.height
+          settings.height + "px" : settings.height
       });
       if (settings.autoHeight) {
         editor.css({
@@ -737,8 +735,7 @@
         autoCloseBrackets: settings.autoCloseBrackets,
         showTrailingSpace: settings.showTrailingSpace,
         highlightSelectionMatches: !settings.matchWordHighlight ?
-          false :
-          {
+          false : {
             showToken: settings.matchWordHighlight === "onselected" ? false : /\w/
           }
       };
@@ -2339,8 +2336,7 @@
           top: 0,
           width: editor.width(),
           height: settings.autoHeight && !this.state.fullscreen ?
-            "auto" :
-            editor.height()
+            "auto" : editor.height()
         });
         if (this.state.loaded) {
           $.proxy(settings.onpreviewing, this)();
@@ -2384,8 +2380,7 @@
         position: "absolute",
         width: editor.width() / 2,
         height: settings.autoHeight && !this.state.fullscreen ?
-          "auto" :
-          editor.height() - toolbar.height(),
+          "auto" : editor.height() - toolbar.height(),
         top: settings.toolbar ? toolbar.height() : 0
       });
       if (this.state.loaded) {
@@ -4018,11 +4013,9 @@
       zIndex: editormd.dialogZindex,
       border: editormd.isIE8 ? "1px solid #ddd" : "",
       width: typeof options.width === "number" ?
-        options.width + "px" :
-        options.width,
+        options.width + "px" : options.width,
       height: typeof options.height === "number" ?
-        options.height + "px" :
-        options.height
+        options.height + "px" : options.height
     });
     var dialogPosition = function () {
       dialog.css({

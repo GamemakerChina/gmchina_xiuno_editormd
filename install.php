@@ -19,6 +19,7 @@ $editor_md_config = array(
     "readonly"=>"false",
     "theme_onoff"=>"false",
     "theme"=>"",
+    "theme_editor"=>"",
     "theme_preview"=>"",
     "codefold"=>"false",
     "tasklist"=>"false",

@@ -27,6 +27,7 @@ $autoheight = param('autoheight');
 $readonly = param('readonly');
 $theme_onoff = param('theme_onoff');
 $theme = param('theme');
+$theme_editor = param('theme_editor');
 $theme_preview = param('theme_preview');
 $codefold = param('codefold');
 $tasklist = param('tasklist');
@@ -60,7 +61,7 @@ if($method == 'GET') {
     //滚动
     $sync_scrolling = form_radio('sync_scrolling', array('true'=>'双向滚动', 2=>'单向滚动', 'false'=>'关闭'), $editor_md_config['sync_scrolling']);
     //长度宽度
-    $width = form_text('width', $editor_md_config['width'], '100%', '若为百分比需带双引号');
+    $width = form_text('width', $editor_md_config['width'], '100%', '输入百分比');
     $height = form_text('height', $editor_md_config['height'], '100%', '若为百分比需带双引号');
     //HTML解析
     $html_decode = form_radio('html_decode', array('true'=>'开启', 'false'=>'关闭'), $editor_md_config['html_decode']);
@@ -74,8 +75,9 @@ if($method == 'GET') {
     $readonly = form_radio('readonly', array('true'=>'开启', 'false'=>'关闭'), $editor_md_config['readonly']);
     //编辑器主题
     $theme_onoff = form_radio('theme_onoff', array('true'=>'开启', 'false'=>'关闭'), $editor_md_config['theme_onoff']);
-    $theme = form_text('theme', $editor_md_config['theme'], '100%', '');
-    $theme_preview = form_text('theme_preview', $editor_md_config['theme_preview'], '100%', '');
+    $theme = form_text('theme', $editor_md_config['theme'], '100%', '编辑器基本主题（如导航栏）');
+    $theme_editor = form_text('theme_editor', $editor_md_config['theme_editor'], '100%', '编辑器代码区主题');
+    $theme_preview = form_text('theme_preview', $editor_md_config['theme_preview'], '100%', '编辑器预览区主题');
     //代码折叠
     $codefold = form_radio('codefold', array('true'=>'开启', 'false'=>'关闭'), $editor_md_config['codefold']);
     //任务列表（GFM 功能）
@@ -119,6 +121,7 @@ if($method == 'GET') {
     $editor_md_config['readonly'] = param('readonly');
     $editor_md_config['theme_onoff'] = param('theme_onoff');
     $editor_md_config['theme'] = param('theme');
+    $editor_md_config['theme_editor'] = param('theme_editor');
     $editor_md_config['theme_preview'] = param('theme_preview');
     $editor_md_config['codefold'] = param('codefold');
     $editor_md_config['tasklist'] = param('tasklist');
