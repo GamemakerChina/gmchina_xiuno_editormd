@@ -1,7 +1,7 @@
 {
     "name": "Editor.md",
     "brief": "基于 Editor.md 的 Markdown 编辑器，GitHub 项目地址：https://github.com/GamemakerChina/gmchina_xiuno_editormd",
-    "version": "1.4",
+    "version": "1.4.1",
     "bbs_version": "4.0",
     "installed": 1,
     "enable": 1,
