@@ -5,6 +5,8 @@ Editor.md for Xiuno BBS 4.0+
 
 ## 用法
 
+1.5 开始无需加入 Hook，以下作为兼容性方案保留
+
 1. 下载最新版本并解压，将文件夹更名为 `gmchina_xiuno_editormd` 后在后台启动插件
 2. 修改当前使用的主题的 `post.htm` 文件，在 id 和 name 为 message 的代码中加入两段 Hook ( #3 )：
 ```html
