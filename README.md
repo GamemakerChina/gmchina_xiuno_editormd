@@ -51,12 +51,25 @@ Editor.md for Xiuno BBS 4.0+
 - [x] Markdown 语法发帖
 - [x] 上传图片（保存到本地）
 - [x] 标准的语法高亮（`<pre><code class="language-(lang)"></code></pre>`）（支持 Prism.js 高亮）
-- [x] Parsedown Extra 扩展 Markdown 更多功能（具体查看 [PHP Markdown Extra](https://michelf.ca/projects/php-markdown/extra)（HTML 插入并不能用，原因同已知问题第一条）
-- [ ] 不需要手动在主题加入 Hook ( #3 )
+- [x] Parsedown Extra 扩展 Markdown 更多功能（具体查看 [PHP Markdown Extra](https://michelf.ca/projects/php-markdown/extra)）
+- [x] 不需要手动在主题加入 Hook
 - [x] 设置界面
-- [ ] 重写图片本地上传图片接口（插件内为 Editor.md 提供的范例）
+- [ ] 重写图片本地上传图片接口（目前的接口已经足够使用）
 - [ ] 更多云存储的选择
 - [x] 发布兼容 HTML
+
+## 图片存储支持
+
+| 存储 | 支持情况 | 备注 |
+| :------------: | :-------------: | :-------------: |
+| 本地 | 支持 |     |
+| 七牛 | 支持 |[xxiaopang](https://gitee.com/xxiaopang/xiaopang_editor)|
+| 又拍 | 不支持 |     |
+| 阿里云 OSS | 不支持 |     |
+| 腾讯云 COS | 不支持 |     |
+| SM.MS | 不支持 |     |
+| GitHub | 不支持 |     |
+| 微博图床 | 不支持 |     |
 
 ## 安全性问题
 
