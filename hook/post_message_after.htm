@@ -1,0 +1,9 @@
+<script>
+    var lables = document.querySelectorAll('textarea')
+    var ele = document.createElement('div')
+    ele.id='editormd';
+    lables.forEach(function (lable,index) {
+        lable.parentNode.replaceChild(ele, lable)
+        ele.appendChild(lable)
+    })
+</script>
